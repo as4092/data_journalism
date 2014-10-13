@@ -1,0 +1,32 @@
+<h2>"Coming out of the Cupboard" or "We Are What We Have Eaten, a Timeline"
+For the 'Recipe Redux' in <em>The New York Times Magazine</em></h2>
+An investigation into the most (and least) popular ingredients from recipes published in the<a href="nytimes.com" target="_blank"> New York Times</a> which <strong>reveals cultural truths, identifies lifestyle trends and sheds light on who we are by chronicling what we eat</strong>. Data will be presented in a timeline format. Follow up questions might include:
+a) What impact does scientific understanding of nutrition have on our diets by decade?
+b) Can The Exotic survive globalization?
+c) Is locavorism a revolutionary movement or a rehash?
+
+<strong>Methodology &amp; Presentation</strong>:
+I plan to use the archive on which <a href="cooking.nytimes.com" target="_blank">cooking.nytimes.com</a> was built to perform n-gram type analysis of the 1600+ recipes it holds dating back to 1981 (or I will use NYT archive on LexisNexis, or NYT api) to get a word count by year. I will sort, filter and aggregate the data looking for key moments (and movements) from which to populate an interactive timeline(s) (using <a href="http://timeline.knightlab.com" target="_blank">http://timeline.knightlab.com</a> or similar). I may choose to expand the investigation to include restaurant reviews and/or articles from 1851–1980.
+
+If I am able to perform a more sophisticated scrape and unlock the structured data, I could conceivably extract more than a word count out of the archive. Recipes contain a trove of information about quantity and portion in addition to ingredients. Creating a GUI that explores the cumulative amount of any given ingredient in any given year might amount to something (especially as compared to heart attack rates for the same period, for example).
+
+<strong>Inspiration: </strong>
+-<a href="http://www.amazon.com/Appetite-City-Culinary-History-York/dp/0374532494" target="_blank">Appetite City: A Culinary History of New York</a>, by William Grimes. Ask Grimes to consult and speculate on the popularity of an ingredient at/over a certain period once I have the word count.
+-<a href="http://www.grubstreet.com/2013/04/the-history-of-ramps-popularity.html" target="_blank">http://www.grubstreet.com/2013/04/the-history-of-ramps-popularity.html</a>
+
+<a href="http://www.grubstreet.com/2013/04/the-history-of-ramps-popularity.html" target="_blank"> </a>
+
+&nbsp;
+<h2>2. "A Kiss that Begins with K-Visa" or "Immigration after DoMA"
+For <em>The New Republic</em></h2>
+When DoMA was stuck down by the US Supreme Court in June 2013, US embassies and consulates began to adjudicate nonimmigrant visas applicationsfor same sex couples just as they do for opposite sex couples (K-1 Visas for spouses and K-3 Visas for fiancé/fiancées). <strong>The focus of my investigation will be to compare the rates of application and approvals of K-Visas submitted by same sex couples with opposite sex couples’</strong>. Follow up questions include:
+
+a) How many couples have been united that previously might have been kept apart? How far apart?
+b) Is there any predominance from where same sex partners emigrate? Are they fleeing homophobic regimes and persecution?
+
+<strong>Research</strong>:
+The US Department of State, Bureau of Consular Affairs publishes some data tables on their website, but I haven’t been able to find a report with detailed demographics on K- Visas. I am in touch with someone trying to put me in touch with a Consular Officer who might be able to point me towards more specific data.
+
+In the meantime, I was able to find one <a href="http://travel.state.gov/content/dam/visas/Statistics/AnnualReports/FY2013AnnualReport/FY13AnnualReport-TableXVII.pdf" target="_blank">table</a> which lumps the entire K category as one and reports on the number issued by country.
+
+For fun, I converted the PDF to a spreadsheet and cleaned it. Then I used <a href="cartodb.com" target="_blank">cartodb.com</a> to merge a geocoded shapefile and created a choropleth map. For even more fun(?) I also cross referenced a UN table of divorce rates by country and included that statistic on my map.<iframe src="https://adriansas.cartodb.com/viz/a0de73f4-4dd0-11e4-b95b-0e4fddd5de28/embed_map" width="100%" height="520" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
