@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://dl.dropboxusercontent.com/u/1307405/maps-material/class6/createvis.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Easy example | CartoDB.js</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico">
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
+  </head>
+  <body cz-shortcut-listen="true">
+    <div id="map"></div>
+
+    <!-- include cartodb.js library -->
+    <script src="./creativisCartoDB.js_files/cartodb.js"></script>
+
+    <script>
+      function main() {
+        cartodb.createVis('map', 'http://team.cartodb.com/api/v2/viz/6d4b61c2-58cb-11e4-9d2a-0e853d047bba/viz.json')
+        .done(function(vis, layers) {
+          //stuff
+        })
+        .error(function(err) {
+          console.log(err);
+        });
+      }
+
+      window.onload = main;
+    </script>
+  
+
+</body></html>

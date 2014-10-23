@@ -1,0 +1,521 @@
+.no-text {
+  text-indent: -9999px;
+}
+.clickable {
+  cursor: pointer;
+}
+.button {
+  cursor: pointer;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+  /* For modern browsers */
+
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#about .pane {
+  display: none;
+}
+#about .pane.active {
+  display: block;
+}
+#signup .confirmation,
+#signup .error {
+  display: none;
+}
+#poll #controls .next,
+#poll #controls .about {
+  display: none;
+}
+#poll.question #question,
+#poll.results #results,
+#poll.about #about,
+#poll.signup #signup,
+#poll.prompt #prompt,
+#poll.loading #loading,
+#poll.end #end {
+  display: block;
+}
+#poll.about #controls,
+#poll.signup #controls,
+#poll.prompt #controls,
+#poll.end #controls {
+  display: none;
+}
+#poll.question #controls .about,
+#poll.about #controls .about,
+#poll.signup #controls .about,
+#poll.prompt #controls .about,
+#poll.loading #controls .about,
+#poll.end #controls .about {
+  display: block;
+}
+#poll.results #controls .next,
+#poll.about #controls .next,
+#poll.signup #controls .next,
+#poll.prompt #controls .next,
+#poll.loading #controls .next,
+#poll.end #controls .next {
+  display: block;
+}
+body {
+  background: #f9f9f9;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+body#static {
+  overflow-y: scroll;
+}
+.views {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.view {
+  margin: 30px 0 0 0;
+  display: none;
+}
+.view.scroll {
+  margin: 30px 0 45px 0;
+}
+h1 {
+  font-size: 12px;
+  padding: 7px;
+}
+h2 {
+  font-size: 16px;
+  line-height: 16px;
+}
+h3 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+p {
+  font-size: 13px;
+  line-height: 16px;
+  margin: 16px 0;
+}
+#poll.about #about .content,
+#poll.signup #signup .content,
+#poll.prompt #prompt .content,
+#poll.end #end .content {
+  height: 219px;
+}
+#header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 28px;
+  background: #ffffff;
+  text-transform: uppercase;
+}
+#header .content {
+  border: 1px solid #dfdfdf;
+  background: #ffffff;
+  padding: 0 10px;
+  border-left: none;
+  border-right: none;
+  position: relative;
+}
+#header h1 {
+  border: 0;
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: #307061;
+  font-weight: normal;
+}
+#header .info {
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  text-indent: -9999px;
+  width: 16px;
+  height: 16px;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/info.png');
+}
+#controls {
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 38px;
+  background: #f9f9f9;
+}
+#controls .content {
+  border: 1px solid #dfdfdf;
+  height: 26px;
+  padding: 5px 10px;
+  border-left: none;
+  border-right: none;
+}
+#controls .button {
+  cursor: pointer;
+  color: #999999;
+  line-height: 26px;
+  font-size: 13px;
+  display: inline;
+  float: left;
+}
+#controls .signup {
+  text-indent: -9999px;
+  float: left;
+  width: 110px;
+  height: 26px;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/joinyougovbutton.png');
+}
+#controls .social {
+  text-indent: -9999px;
+  height: 26px;
+  margin-left: 5px;
+}
+#controls .facebook {
+  display: none;
+}
+#controls .twitter {
+  width: 32px;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/share_twitter_small.png');
+}
+#controls .next {
+  text-indent: -9999px;
+  float: right;
+  width: 109px;
+  height: 26px;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/nextpoll.png');
+}
+@media all and (min-width: 500px) {
+  #controls .facebook {
+    display: block;
+    width: 75px;
+    background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/share_facebook.png');
+  }
+  #controls .twitter {
+    width: 78px;
+    background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/share_twitter.png');
+  }
+}
+#question .content {
+  border-bottom: none;
+}
+#question .question,
+#question .loading {
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  font-size: 15.5px;
+  line-height: 17px;
+  padding: 15px 15px 5px 15px;
+  margin-bottom: 10px;
+}
+#question .answer {
+  display: inline;
+  position: relative;
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 95px;
+  margin: 0 0 10px 10px;
+  padding: 4px 4px 4px 24px;
+  border: 1px #f9f9f9 solid;
+  transition: all 125ms ease 0s;
+  -webkit-transition: all 125ms ease 0s;
+  -moz-transition: all 125ms ease 0s;
+  -o-transition: all 125ms ease 0s;
+  -khtml-transition: all 125ms ease 0s;
+}
+#question .answer input {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+}
+#question .answer:hover {
+  border: 1px solid #c3c3c3;
+  background: #dcdcdc;
+}
+@media all and (min-width: 500px) {
+  #question .answer {
+    width: auto;
+    display: block;
+    float: none;
+    margin: 0 15px 10px 10px;
+  }
+}
+#results .question {
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  font-size: 15.5px;
+  line-height: 17px;
+  padding: 15px 15px 5px 15px;
+}
+#results .key {
+  padding: 15px 15px 5px 15px;
+  height: 18px;
+}
+#results .key .label {
+  display: block;
+  float: left;
+  color: #999999;
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 5px;
+}
+#results .key .label .indicator {
+  display: block;
+  float: left;
+  height: 6px;
+  width: 6px;
+  margin: 6px 5px 0 0;
+}
+#results .key .label.national .indicator {
+  background: #f53a19;
+}
+#results .key .label.local .indicator {
+  background: #649489;
+}
+#results .results {
+  padding: 0 0 15px 0;
+}
+#results .results .answer {
+  margin: 10px 0 0 15px;
+  display: inline-block;
+  width: 250px;
+}
+#results .results .answer .label {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#results .results .answer .graph .column {
+  overflow: hidden;
+  width: 250px;
+}
+#results .results .answer .graph .column .bar {
+  display: block;
+  float: left;
+  height: 6px;
+  margin: 2px 0;
+  background: #000;
+}
+#results .results .answer .graph .column .score {
+  display: block;
+  float: left;
+  font-size: 9px;
+  line-height: 10px;
+  margin-left: 5px;
+  color: #999999;
+}
+#results .results .answer .graph .column.national .bar {
+  background: #f53a19;
+}
+#results .results .answer .graph .column.local .bar {
+  background: #649489;
+}
+#prompt .message {
+  padding: 15px 15px 5px 15px;
+  text-align: center;
+}
+#prompt h2 {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: bold;
+  margin: 10px auto;
+  width: 180px;
+}
+#prompt p {
+  width: 240px;
+  margin: 15px auto 20px auto;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: Garamond, 'Times New Roman', Times, serif;
+}
+@media all and (min-width: 500px) {
+  #prompt p {
+    width: 350px;
+  }
+}
+#prompt .back {
+  background: url("http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/nextpoll.png") 0 0 no-repeat;
+  width: 109px;
+  height: 26px;
+  text-indent: -9999px;
+  display: inline-block;
+}
+#prompt .signup {
+  text-indent: -9999px;
+  width: 110px;
+  height: 26px;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/joinyougovbutton.png');
+  display: inline-block;
+}
+#end .message {
+  padding: 15px 15px 5px 15px;
+  text-align: center;
+}
+#end h2 {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: bold;
+  margin: 10px auto;
+  width: 180px;
+}
+#end p {
+  width: 240px;
+  margin: 15px auto 20px auto;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: Garamond, 'Times New Roman', Times, serif;
+}
+@media all and (min-width: 560px) {
+  #end p {
+    width: 350px;
+  }
+}
+#end .signup {
+  text-indent: -9999px;
+  width: 110px;
+  height: 26px;
+  margin: 15px auto;
+  background-image: url('http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/joinyougovbutton.png');
+}
+#signup .info,
+#signup .form,
+#signup .error,
+#signup .confirmation {
+  padding: 0 15px;
+}
+#signup .info,
+#signup .error,
+#signup .confirmation {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  padding-top: 10px;
+}
+#signup .form h3 {
+  margin: 10px 0;
+}
+#signup .form label {
+  display: block;
+  font-size: 11.2px;
+  line-height: 22px;
+  height: 22px;
+  margin: 0 0 10px 0;
+}
+#signup .form input {
+  border: 1px solid #b5b5b5;
+}
+#signup .form input,
+#signup .form .button,
+#signup .form span {
+  height: 24px;
+  float: left;
+}
+#signup .form .button {
+  display: inline;
+}
+#signup .form .submit-email {
+  background: url("http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/joinbuttonw.png") 0 0 no-repeat;
+  width: 98px;
+  height: 26px;
+  text-indent: -9999px;
+}
+#signup .back {
+  background: url("http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/backtothepoll.png") 0 0 no-repeat;
+  width: 152px;
+  height: 30px;
+  margin: 15px auto 0 auto;
+  text-indent: -9999px;
+}
+#about .tabs {
+  width: 100%;
+  height: 27px;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  background: #7e7e7e;
+  color: #fff;
+}
+#about .tabs .tab,
+#about .tabs .back {
+  display: inline;
+}
+#about .tabs .back {
+  float: right;
+  background: url("http://d25d2506sfb94s.cloudfront.net/huffingtonpost/v4.4.4/images/deletebutton2.png") 0 0 no-repeat;
+  text-indent: -1000px;
+  width: 21px;
+  height: 21px;
+  margin: 3px 2px 0 0;
+  text-indent: -9999px;
+}
+#about .tabs .tab {
+  float: left;
+  font-size: 12px;
+  line-height: 27px;
+  padding: 0 10px;
+  border-right: 1px solid #fff;
+}
+#about .tabs .tab.active {
+  background: #f9f9f9;
+  color: #333333;
+}
+#about .pane {
+  padding: 27px 15px 0 15px;
+}
+#loading .content {
+  margin: 50px 0;
+  text-align: center;
+}
+#info .content {
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  padding: 35px 20px 20px 20px;
+}
+#info .content ul {
+  padding-left: 20px;
+}
+#info .content h2,
+#info .content h3,
+#info .content p,
+#info .content ul,
+#info .content hr {
+  margin: 16px 0;
+}
+#info .content h2,
+#info .content h3,
+#info .content p {
+  font-size: 16px;
+  line-height: 18px;
+}
+#info .content h2 {
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #307061;
+}
+#info .content hr {
+  border: 1px solid #999999;
+}
