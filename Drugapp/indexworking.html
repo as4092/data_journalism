@@ -11,11 +11,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <style type="text/css">
 
-.selected { 
- opacity: 0.4;
-}
-
-
   body {
       width:760px;
       margin:40px auto;
@@ -66,11 +61,22 @@
     }
   
 
+
+  visibility: hidden;
+  opacity: 0;
+
+
+
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;
+  */
   }
 
 
 .imgWrap:hover .imgDescription {
   visibility: visible;
+  opacity: 1;
 }
 
   </style>
@@ -82,10 +88,6 @@ var total = 0;
 
 function showDetails(brand) {
     // begin to parse for details
-
-    var t = $(brand);
-
-    console.log(t);
 
     // Here we're going to extract the name.
     // first we get the "src" attribute off the 
@@ -105,39 +107,20 @@ function showDetails(brand) {
     // integer that we can add to other integers
     var doseNumber = parseInt(dataDose);
 
+    // total the dose
+    total += doseNumber;
+   if (total > 4000) {
+    document.getElementById("divAnswer").innerHTML = ("OVERDOSE WARNING! You've exceded the daily limit");
+    alert("OVERDOSE! You've exeded the daily limit");
 
-
+}
     console.log(total);
     console.log(dataDose);
     console.log(doseNumber);
     // put it back out to the document.
-    
-    // total the dose
-
-$("img").click(function() {
-
-  console.log("clicked")
-
-});
-
-if($(t).hasClass("selected")){
-  // alert("clicked one that was not selected")
-  total -=doseNumber
-} else {
-  // alert("clicked one that was selected")
-  total += doseNumber
-};
-
-document.getElementById("divAnswer").innerHTML = ( name + " contains " + doseNumber + "mg, for a total of " + total+"mg.");
-
-    $(t).toggleClass("selected")
+    document.getElementById("divAnswer").innerHTML = ( name + " contains " + doseNumber + "mg, for a total of " + total+"mg.");
 
 
-    //total += doseNumber;
-   if (total > 4000) {
-    document.getElementById("divAnswer").innerHTML = ("OVERDOSE WARNING! You've exceded the daily limit");
-    console.log("OVERDOSE! You've exeded the daily limit");
-  }
   
     //alert(brand.innerHTML + " contains " + dataDose + "mg.");
 }
@@ -173,23 +156,9 @@ function extractName (src) {
 
 function myReset() {
     total = 0;
-   
-    $("img").removeClass("selected");
-    // $("#divAnswer").html("");
-
      document.getElementById("divAnswer").innerHTML = ( "");
 
 }
-
-
-// $(document).ready(function(){ 
-//   $("img").click(function(){
-//     console.log("hello")
-//   });
-
-
-// });
-
 
 
 </script>
@@ -209,6 +178,7 @@ McNeil pledged it would add language to their drug labels recommending a lower t
           <h3> Click a combination of the medications below to see how they add up:<h3>
 
                 <div id="divAnswer">
+
                  
 <!-- blank div to display answer
  -->
@@ -222,7 +192,7 @@ McNeil pledged it would add language to their drug labels recommending a lower t
 
          <div id="drug"> 
  
-<img src="images/alkaseltzer.jpg" onclick="showDetails(this)"  data="2000">
+<img src="images/alkaseltzer.jpg" onclick="showDetails(this)" data="2000">
 <img src="images/anacin.jpg" onclick="showDetails(this)" data="4000">
 <img src="images/childrens_tylenol.jpg" onclick="showDetails(this)" data="800">
 <img onclick="showDetails(this)" src="images/coricidin.jpg" data="3900">
