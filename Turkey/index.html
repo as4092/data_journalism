@@ -4,20 +4,42 @@
 
 body {
   font: 10px sans-serif;
+ 
 }
 
 .arc path {
   stroke: #fff;
 }
+h1 {
+    color: #7B5B30;
+    font-size: 200%
+  }
+
 
 </style>
 <body>
+
+  <h1> <SPAN STYLE="color: #B28345; font-size: 150%">Turkey Parts </SPAN>in recipes published by <br>
+<SPAN STYLE="color: #B28345; font-size: 150%">The New York Times  </SPAN>(percent over the last three decades)
+  </h1>
+  <p> <SPAN STYLE="color: #7B5B30"> Breast 27% </SPAN>
+    <SPAN STYLE="color: #8D6837"> Whole 23%</SPAN> 
+    <SPAN STYLE="color: #7B5B30"> Liver 10%</SPAN>
+    <SPAN STYLE="color: #9F763E">  Giblet 8%</SPAN> 
+    <SPAN STYLE="color: #B28345"> Gizzard 6% </SPAN>
+    <SPAN STYLE="color: #BC9055"> Heart 6% neck 5% </SPAN>
+    <SPAN STYLE="color: #C39C67"> wing 5% </SPAN>
+    <SPAN STYLE="color: #CAA879"> Thigh 4% </SPAN>
+    <SPAN STYLE="color: #CAA879"> leg 4% </SPAN>
+    <SPAN STYLE="color: #D9BF9E"> rib 3%</SPAN></p>
+     
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 //http://bl.ocks.org/mbostock/3887235
 
-var width = 960,
-    height = 500,
+var width = 720,
+    height = 480,
     radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
@@ -80,9 +102,10 @@ d3.csv("data.csv", function(error, data) {
 
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
-      .attr("dy", ".35em")
+      .attr("dy", ".1em")
       .style("text-anchor", "middle")
       .text(function(d) { return d.data.age; });
+
 
       
       
