@@ -1,0 +1,126 @@
+body {
+  width:1050px;
+  margin:30px auto;
+  font-family:georgia, arial, sans;
+
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 51px;
+  margin-bottom: 10px;
+
+}
+
+.byline, .date {
+  margin: 10px 0;
+  font-family: arial;
+  font-weight: normal;
+}
+
+
+.meta-info {
+  display: inline;
+}
+
+.displayed {
+  
+    top: 100px;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+
+.article {
+  width:540px;
+  margin: 10px auto;
+  font-size:16px;
+  line-height: 1.4em;
+  }
+
+.caption {
+ 
+  font-family: arial;
+  font-weight: normal;
+ text-align: right;
+  margin: 10px 0;
+  font-family: arial;
+  font-weight: normal;
+  font-size: 0.67em;
+  border-top: 0;
+  padding-top: 0;
+
+  color:#000;
+  
+
+}
+  .caplink{
+     font-weight: bold;
+  color:#000;
+  }
+.top-chart {
+  width:100%;
+  height:550px;
+  border:1px solid #f0f;
+}
+
+.author {
+  font-weight: bold;
+  color:#000;
+}
+
+.subhed {
+  margin:40px 0 10px;
+}
+.chartlabel{
+text-align: center;
+}
+.header-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h5.kicker {
+width:720px;
+  
+font-weight: normal;
+font-size: 18px;
+margin: 10px 0;
+text-align: left;
+}
+
+.example-table {
+  font-family: arial;
+  font-size:13px;
+  border-collapse: collapse;
+  width:100%;
+}
+
+td {
+  padding:3px 0;
+  border-bottom: 1px solid #dedede;
+}
+
+th {
+    font-size: 11px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.ing2010-cell, .ing2014-cell,  {
+  text-align: left;
+  width:30px;
+  
+}
+.2010percent-cell,  .2014percent-cell,  {
+  text-align: right;
+  width:30px;
+  padding-right: 30px;
+}
+
+.ing2014-cell  {
+  style="text-align: right; padding-right: 30px;"
+
+}
+
