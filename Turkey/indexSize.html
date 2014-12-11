@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+////http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/
+
+<style>
+
+body {
+  font: 10px sans-serif;
+
+}
+</style>
+<body>
+  <h1>change size</h1>
+  <button class="btn btn-mini" id="button">Transition</button>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+//Make an SVG Container https://www.dashingd3js.com/svg-basic-shapes-and-d3js
+
+
+ var svgContainer = d3.select("body").append("svg")
+.attr("width", 200)
+.attr("height", 200);
+//Draw the Rectangle
+var mySquare = svgContainer.append("rect")
+.attr("x", 10)
+.attr("y", 10)
+.attr("width", 50)
+.attr("height", 100);
+
+
+
+  mySquare
+  .transition()
+  .attr("x",820);
+
+  mySquare
+  .transition()
+  .attr("width",120); // will make it bigger
+ 
+
+ button.on("click", function() {
+  mySquare.transition().attr("x",320);
+})
+
+</script>
+
+
+</body>

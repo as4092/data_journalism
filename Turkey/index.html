@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+ 
+}
+
+.arc path {
+  stroke: #fff;
+}
+h1 {
+    color: #7B5B30;
+    font-size: 200%
+  }
+
+a {
+    color: #7B5B30;
+    text-decoration: none;
+}
+
+</style>
+<body>
+
+  <h1> <SPAN STYLE="color: #B28345; font-size: 150%">Turkey Parts </SPAN>called for by recipes in<br>
+<SPAN STYLE="color: #B28345; font-size: 150%">The New York Times  </SPAN> over the last three decades.
+  </h1>
+  <p> <SPAN STYLE="color: #7B5B30"> By Percent: </SPAN>
+    <SPAN STYLE="color: #8D6837"> Breast 27%, </SPAN> 
+    <SPAN STYLE="color: #8D6837"> Whole 23%, </SPAN> 
+    <SPAN STYLE="color: #8D6837"> Liver 10%, </SPAN>
+    <SPAN STYLE="color: #9F763E">  Giblet 8%, </SPAN> 
+    <SPAN STYLE="color: #B28345"> Gizzard 6%, </SPAN>
+    <SPAN STYLE="color: #BC9055"> Heart 6%, neck 5% </SPAN>
+    <SPAN STYLE="color: #C39C67"> wing 5%, </SPAN>
+    <SPAN STYLE="color: #CAA879"> Thigh 4%, </SPAN>
+    <SPAN STYLE="color: #CAA879"> leg 4%, </SPAN>
+    <SPAN STYLE="color: #D9BF9E"> rib 3%</SPAN></p>
+     
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+//http://bl.ocks.org/mbostock/3887235
+
+var width = 720,
+    height = 480,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.ordinal()
+    .range([  
+
+  "#7B5B30",
+
+  "#8D6837", 
+
+  "#9F763E",
+
+
+  "#B28345",
+
+  "#BC9055",
+
+  "#C39C67",
+
+  "#CAA879",
+
+  "#D1B38C",
+  "#D9BF9E",  
+
+  "#E0CBB0",
+
+  "#E0CBB0"
+]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(0);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.population; });
+  //  //pie.startAngle([1])//attempt to rotate
+    //pie.endAngle([1])
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+d3.csv("data.csv", function(error, data) {
+
+  data.forEach(function(d) {
+    d.population = +d.population;
+  });
+
+  var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(d.data.age); });
+
+  g.append("text")
+      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+      .attr("dy", ".1em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.data.age; });
+
+
+      
+      
+
+
+});
+
+
+
+function type(d) {
+  d.value = +d.value; // coerce to number
+  return d;
+}
+
+</script>
+</p>Source: <a href="cooking.nytimes.com">cooking.nytimes.com</a></p>
+</body>
