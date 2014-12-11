@@ -19,6 +19,7 @@ h1 {
 }
 
 
+
 .meta-info {
   display: inline;
 }
@@ -133,5 +134,11 @@ a:visited{
 }
 a:hover{
   color: #f0f;
+}
+.sidebar{
+  width:1050px;
+  margin:30px auto;
+  display: block;
+    float: left 150px;
 }
 
