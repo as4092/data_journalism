@@ -26,6 +26,7 @@ h1 {
 .displayed {
   
     top: 100px;
+    left: 150px;
     
     display: block;
     margin-left: auto;
